@@ -1,0 +1,39 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+	<h1>Liste des commandes</h1>
+	<style>h1{color: peru;}</style>
+	<div class="col-12 d-flex justify-content-end mb-2"> 
+		<a class="btn btn-primary sm " href="{% url 'add_commande' %}"> Nouvelle Commande </a>
+	</div>
+		<table class="table table-bordered table-striped table-hover">
+		  <thead class="table-dark">
+			<tr>
+              <th>ID Commande</th>
+			  <th>Matricule_Client</th>
+			  <th>Plaque_Voiture</th>
+			  <th>Quantite</th>
+			  <th>Montant</th>
+				<th>Type Commande</th>
+			  <th>Date</th>
+			</tr>
+		  </thead>
+		  <tbody>            
+			{% for commande  in  commandes %} 
+			<tr class="success">
+				<td>{{commande.id}}</td>
+			  <td>{{commande.client}}</td>
+			  <td>{{commande.voiture}}</td>
+			  <td>{{commande.quantite}}</td>
+			  <td>{{commande.montant}}</td>
+			  <td>{{commande.type_commande}}</td>
+              <td>{{commande.date_commande}}</td>
+			 <td><a class="btn btn-outline-info sm" href="{% url 'show_commande' commande.id %}">
+				Details
+			</a></td>
+			</tr>
+			{% endfor %}
+		  </tbody>
+		</table>
+
+{% endblock %}

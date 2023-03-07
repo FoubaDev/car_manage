@@ -1,0 +1,87 @@
+{%extends 'layout.html' %}
+{% load crispy_forms_tags %}
+
+{%block content%}
+<div class="row">
+	<div class="col-sm-2"></div>
+<div class="shadow p-4 mb-5 bg-body rounded col-md-8">
+	<center>
+		<style>h3{color: peru;
+		font-weight: bold;}</style>
+		<h3>Ajouter une nouvelle commande</h3>
+	</br>
+	{% if submitted %}
+		<h1>La commande a été soumise avec succés...!</h1>
+	{% else %}
+	<form action="", method="POST" enctype="multipart/form-data">
+		{% csrf_token %}
+		<div class="row">
+			<div class="col-2">
+				{{ form4.matricule|as_crispy_field }}
+			</div>
+			<div class="col-5">
+				{{ form3.nom|as_crispy_field }}
+			</div>
+			<div class="col-5">
+				{{ form3.prenom|as_crispy_field }}
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-2">
+				{{ form3.genre|as_crispy_field}}
+			</div>
+			<div class="col-3">
+				{{ form2.telephone|as_crispy_field}}
+			</div>
+			<div class="col-7">
+				{{ form2.email|as_crispy_field}}
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-4">
+				{{ form2.quartier|as_crispy_field}}
+			</div>
+			<div class="col-4">
+				{{ form2.ville|as_crispy_field}}
+			</div>
+			<div class="col-4">
+				{{ form5.immatriculation|as_crispy_field}}
+			</div>
+		</div>
+		<div class="row">
+		</div>
+		<div class="row">
+			<div class="col-3">
+				{{ form5.modele|as_crispy_field}}
+
+			</div>
+			<div class="col-4">
+				{{ form5.marque|as_crispy_field}}
+			</div>
+			<div class="col-2">
+				{{ form5.place|as_crispy_field}}
+			</div>
+			<div class="col-3">
+				{{ form5.price|as_crispy_field}}
+			</div>
+			<div class="col-3">
+				{{ form1.quantite|as_crispy_field}}
+			</div>
+			<div class="col-3">
+				{{ form1.montant|as_crispy_field}}
+			</div>
+			<div class="col-3">
+				{{ form1.type_commande|as_crispy_field}}
+			</div>
+		</div>
+	
+		  <div class="d-flex justify-content-end mb-2">
+			<button type="submit" class="btn btn-primary mb-3" value="">Submit</button>
+		  </div>
+	</form>
+	{% endif %}
+	</center>
+</div>
+</div> 
+ 
+{%endblock%}
