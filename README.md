@@ -1,1 +1,1 @@
-c'est un projet de groupe1 portant sur le travail collaboratif github
+C'est un projet de groupe portant sur la vente et la location de vehicule
